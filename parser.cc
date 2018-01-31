@@ -9,6 +9,8 @@
  */
 #include <iostream>
 #include <cstdlib>
+#include <w32api/d3dvec.inl>
+#include <list>
 #include "parser.h"
 
 using namespace std;
@@ -88,6 +90,7 @@ void Parser::parse_token_list()
     else if (t.token_type == HASH)
     {
         // token_list -> token
+        //expect(END_OF_FILE); maybe not needed
     }
     else
     {
@@ -116,6 +119,7 @@ void Parser::parse_expr()
     Token t = lexer.GetToken();
     if(t.token_type == CHAR){
         // expr -> CHAR
+
     }
     else if (t.token_type == UNDERSCORE){
         // expr -> UNDERSCORE
@@ -150,9 +154,30 @@ void Parser::ParseProgram()
     expect(END_OF_FILE);
 }
 
+//start of implementing my functions
+struct REG {
+
+};
+
+typedef struct Token_List {
+    std::list<string> tokenName;
+    std::list<REG> reg;
+}Token_List;
+
+void match(REG r, string s, int p){
+
+}
+
+void GetToken(Token_List L, string s, int p){
+
+
+}
+
 int main()
 {
     Parser parser;
 
     parser.ParseProgram();
+
+
 }
