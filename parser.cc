@@ -9,7 +9,6 @@
  */
 #include <iostream>
 #include <cstdlib>
-#include <w32api/d3dvec.inl>
 #include <list>
 #include "parser.h"
 
@@ -155,8 +154,17 @@ void Parser::ParseProgram()
 }
 
 //start of implementing my functions
-struct REG {
+struct REG_node{
+    struct REG_node *first_neighbor;
+    char first_label;
+    struct REG_node *second_neighbor;
+    char second_label;
 
+};
+
+struct REG{
+    struct REG_node *starting;
+    struct REG_node *accepting;
 };
 
 typedef struct Token_List {
@@ -175,6 +183,10 @@ void GetToken(Token_List L, string s, int p){
 
 int main()
 {
+    //These two strings for testing.  Delete afterwards
+    string firstInput = "t1 (a)|(b) , t2 (a)* , t3 (((a)|(b))*).((c)*) #";
+    string secondInput = "a aa bb aab";
+
     Parser parser;
 
     parser.ParseProgram();
