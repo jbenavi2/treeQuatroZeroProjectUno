@@ -167,6 +167,15 @@ struct REG{
     struct REG_node *accepting;
 };
 
+struct REG *parse_regular_expression(){
+    
+
+
+
+
+
+}
+
 typedef struct Token_List {
     std::list<string> tokenName;
     std::list<REG> reg;
