@@ -99,8 +99,8 @@ void Parser::parse_token_list()
 }
 
 void Parser::parse_token()
-{
-    // token -> ID expr
+    {
+        // token -> ID expr
 
     expect(ID);
     parse_expr();
@@ -172,18 +172,16 @@ struct REG *parse_regular_expression(){
 
 
 
+};
 
 
-}
-
-typedef struct Token_List {
-    std::list<string> tokenName;
-    std::list<REG> reg;
-}Token_List;
 
 void match(REG r, string s, int p){
 
 }
+
+
+
 
 void GetToken(Token_List L, string s, int p){
 
