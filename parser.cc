@@ -11,6 +11,8 @@
 #include <cstdlib>
 #include <list>
 #include "parser.h"
+#include "lexer.h"
+#include "inputbuf.h"
 
 using namespace std;
 
@@ -167,8 +169,8 @@ struct REG{
     struct REG_node *accepting;
 };
 
-struct REG *parse_regular_expression(){
-    
+REG *parse_regular_expression(){
+
 
 
 
@@ -195,6 +197,7 @@ int main()
     string secondInput = "a aa bb aab";
 
     Parser parser;
+
 
     parser.ParseProgram();
 
